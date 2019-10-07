@@ -1,0 +1,234 @@
+   <ol class="breadcrumb" style="margin-bottom: 0px;">
+  <li class="breadcrumb-item"><a href="#">Acceuil</a></li>
+  <li class="breadcrumb-item active" ><a >Ressources génétiques</a></li>
+  <li class="breadcrumb-item active"><a >RGAA</a></li>
+  <li class="breadcrumb-item active" aria-current="page">{{rgaa_object.nom}}</li>
+            </ol>
+<div  style="background-color: #f2f8f9;">  
+            <header >
+      <h1 style="font-weight: bold;letter-spacing: 2px; font-size: 20px; color:black; padding-top:30px; padding-left:22px; color: #20481e;">
+        <span style="color:white"></span>Ressources génétique d'alimentation et d'agricultures</h1>
+    </header>
+    <br>
+    <!-- <div *ngIf="editeur">
+   <div class="right">
+   
+    <a href=""><i class="fa fa-pencil" ></i>  Modifier  </a>
+    <p> </p>
+    <a href="" style="color: red;"><i class="fa  fa-trash-o" ></i>  Supprimer</a>
+
+   </div>
+   </div>-->
+   <!--***********************************-->
+<div class="row" >
+  <div class="col-6"><h2 style="font-size:14px; font-weight: bold;color: green; padding-left: 15px;">{{rgaa_object.nom}}</h2></div>
+  <!--*******************************************************************************-->
+ <!--*******************************************************************************-->
+  <!--*******************************************************************************-->
+ <!--*******************************************************************************-->
+
+<div *ngIf="validateur">
+  <div class="col-6"><div class="right">
+   
+    <a routerLink="/RGAA/ModifierRgaa/{{rgaacatid}}/{{rgaa_object.id}}" ><i class="fa fa-pencil" ></i>  Modifier  </a>
+    
+   
+ <button (click)="open(content1)" class="btn btn-success" style="background-color: transparent; color: red; border-color: transparent;"><i class="fa fa-trash-o"></i>Supprimer</button>
+   </div></div>
+</div>
+
+ <!--*******************************************************************************-->
+ <!--*******************************************************************************--> <!--*******************************************************************************-->
+ <!--*******************************************************************************-->
+  
+</div>
+   
+   
+<!--***********************************-->
+   
+    <br>
+             <ng-template #content1 let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title" >Voulez-vous vraiment supprimer cette ressource ? </h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+
+            <span aria-hidden="true">&times;</span>
+          </button>
+        
+        </div>
+      
+         <div class="modal-footer">              
+          <button class="btn btn-success" (click)="deleteRgaa()">oui
+          </button>
+          <button type="button" class="btn btn-danger" aria-label="Close" (click)="modal.dismiss('Cross click')">non</button>
+        </div>
+        </ng-template> 
+
+ <ngb-tabset class="tab-solid tab-solid-success">
+          <ngb-tab>
+            <ng-template ngbTabTitle>
+              <i style="font-size: 12px;" class="fa fa-reorder"></i><span style="font-size: 12px; font-weight: bold;">Informations générales </span>
+            </ng-template>
+            <ng-template ngbTabContent  style="background-color: transparent;">
+              
+              <div class="row" style="background-color: transparent;">
+                 <div class="col-lg-12 grid-margin stretch-card">
+    
+  </div>
+  <div class="col-lg-5 grid-margin stretch-card" >
+    <div class="card">
+        <img class="img-fluid w-100 rounded" src="{{lien}}{{rgaa_object.lien}}" alt="" style ="height:250px; width:60px;">
+        <div class="table-responsive">
+
+      <div class="card-body">
+        <table class="table">
+            
+            <tbody>
+              <tr>
+                <td><span style="font-weight: bold;font-size: 12px;color: green;">Nom français</span></td>
+                <td style="font-size: 12px;">{{rgaa_object.nom}}</td>
+                
+              </tr>
+              <tr>
+                <td><span style="font-weight: bold;font-size: 12px;color: green;">Nom arabe</span></td>
+                <td style="font-size: 12px;">{{rgaa_object.nomar}}</td>
+                
+              </tr>
+              <tr>
+                <td><span style="font-weight: bold;font-size: 12px;color: green;">Nom anglais</span></td>
+                <td style="font-size: 12px;">{{rgaa_object.nomang}}</td>
+                
+              </tr>
+              <tr>
+                <td><span style="font-weight: bold;font-size: 12px;color: green;">Nom Binomial</span></td>
+                <td style="font-size: 12px;">{{rgaa_object.binname}}</td>
+                
+              </tr>
+              
+              
+            </tbody>
+          </table>
+      </div>
+        
+        </div>
+      
+    </div>
+  </div>
+
+
+  <div class="col-lg-7 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+          <div style="align-content: center; position: center;"><span style="font-weight: bold;font-size: 12px;color: green;">Description générales</span>
+                <br>
+                <p style="font-size: 12px;">{{rgaa_object.description}}</p>
+               
+
+                <span style="font-weight: bold;font-size: 12px;color: green;">Disposition</span>
+                <br>
+                <p style="font-size: 12px;">{{rgaa_object.dispo}}</p>
+        </div>
+        
+  
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-12 grid-margin stretch-card">
+  <div class="card">
+      <div class="card-body">
+<h2 style="text-align: center; font-size: 16px; font-weight: bold;">Classification</h2>
+        <br>
+        <div class="table-responsive">
+          <table class="table">
+            
+            <tbody>
+              <tr>
+                <td><span style="font-weight: bold;font-size: 12px;color: green;">Règne</span></td>
+                <td style="font-size: 12px;">{{rgaa_object.regne}}</td>
+                <td><span style="font-weight: bold;font-size: 12px;color: green;">classe</span></td>
+                <td style="font-size: 12px;">{{rgaa_object.classe}}</td>
+                 <td><span style="font-weight: bold;font-size: 12px;color: green;">Division</span></td>
+                <td style="font-size: 12px;">{{rgaa_object.division}}</td>
+                
+                
+              </tr>
+              <tr>
+                <td><span style="font-weight: bold;font-size: 12px;color: green;">Sous-règne</span></td>
+                <td style="font-size: 12px;">{{rgaa_object.sousregne}}</td>
+                 <td><span style="font-weight: bold;font-size: 12px;color: green;">Sous-classe</span></td>
+                <td style="font-size: 12px;">{{rgaa_object.sousclasse}}</td>
+                
+                 <td><span style="font-weight: bold;font-size: 12px;color: green;">Ordre physiogénétique</span></td>
+                <td style="font-size: 12px;">{{rgaa_object.ordrephy}}</td>
+                
+              </tr>
+              <tr>
+                <td><span style="font-weight: bold;font-size: 12px;color: green;">Famille</span></td>
+                <td style="font-size: 12px;">{{rgaa_object.famille}}</td>
+                 <td><span style="font-weight: bold;font-size: 12px;color: green;">Genre</span></td>
+                <td style="font-size: 12px;">{{rgaa_object.genre}}</td>
+                 <td><span style="font-weight: bold;font-size: 12px;color: green;">Famille physiogénétique</span></td>
+                <td style="font-size: 12px;">{{rgaa_object.famillephy}}</td>
+                
+                
+              </tr>
+             
+              
+            </tbody>
+          </table>
+        </div>
+         
+      </div>
+    </div>
+  </div>
+</div>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab>
+            <ng-template ngbTabTitle>
+              <i style="font-size: 12px;" class="fa fa-briefcase"></i><span style="font-size: 12px; font-weight: bold;">Recettes traditionnelles</span>
+            </ng-template>
+            <ng-template ngbTabContent>
+
+                <div class="row">
+                  <div class="card">
+                  <div class="card-body">
+                     <h2 style="font-size:16px; font-weight: bold;color: green">{{rgaa_object.usetitle}}</h2>
+                          <br>
+                            <p style="font-size: 12px;">{{rgaa_object.usedesc}}</p>
+                           
+                           
+                    
+                    
+              
+                    
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab>
+            <ng-template ngbTabTitle>
+              <i style="font-size: 12px;" class="fa fa-archive"></i><span style="font-size: 12px; font-weight: bold;">Produits</span>
+            </ng-template>
+            <ng-template ngbTabContent>
+                <div class="card">
+                  <div class="card-body">
+                     <h2 style="font-size:16px; font-weight: bold;color: green">{{rgaa_object.prodname}}</h2>
+                          <br>
+                            <p style="font-size: 12px;">{{rgaa_object.proddesc}}</p>
+                           
+                            
+                    </div>
+                    
+              
+                    
+                  </div>
+                </ng-template>
+          </ngb-tab>
+        </ngb-tabset>
+ 
+
+</div>

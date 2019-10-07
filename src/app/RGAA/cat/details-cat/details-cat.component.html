@@ -1,0 +1,58 @@
+<div *ngIf="cat">
+<!-- <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="15px">
+  
+  <div class="card card-h" style="margin-left: 0px; margin-right: 0px;">
+      <div class="card-body"> 
+  <!--  	<img mat-card-image src="data:{{cat.mimetype}};base64,{{cat.pic}}" alt="x" style="height:100px;">-->
+
+<div class="row mt-5 " >
+<!-- Card -->
+<div class="card card-custom mx-2 mb-3 ">
+
+  <div class="view overlay">
+    <img class="card-img-top imgH" src="{{lien}}{{cat.lien}}" alt="Card image cap" style="height: 200px; width: 240px;">
+    <a>
+      <div class="mask rgba-white-slight"></div>
+    </a>
+  </div>
+
+  <!-- Card content -->
+  <div class="card-body" style="background-color: white;">
+
+    <!-- Title -->
+     <a class="nav-link" routerLink="/RGAA/rgaaofcat/{{cat.id}}" routerLinkActive="active" style="font-size:16px; color: black;" ><strong >{{cat.cat_nom}}</strong> </a>
+			     
+    <a>
+      <div class="mask rgba-white-slight"></div>
+    </a>
+  </div>
+
+</div>
+</div>
+</div>
+			
+		<!--<div class="container-fluid">
+		    <div>
+			  <section class="row">
+			   <a class="nav-link" routerLink="/RGAA/rgaaofcat/{{cat.id}}" routerLinkActive="active" style="font-size:16px; color: black;" ><strong >{{cat.cat_nom}}</strong> </a>
+			     <span class="spacer"></span>
+			     
+		   		<!--  <div ngbDropdown class="d-inline-block">
+			   	<button style="background: transparent; border: none !important;font-size:16px;" id="dropdownBasic1" ngbDropdownToggle>
+					<i class="mdi mdi-dots-vertical"></i>
+				</button>
+				  <div ngbDropdownMenu aria-labelledby="dropdownBasic1" style=" box-shadow: 3px 8px 13px #888888;">
+				    <button class="dropdown-item" style="font-size:14px"><i class="mdi mdi-border-color" style="font-size:14px" (click)='deleteCat()'></i>  Modifier</button>
+				    <button class="dropdown-item" style="font-size:14px"><i class="mdi  mdi-delete" style="font-size:14px" (click)='deleteCat()'></i>  Supprimer</button>
+				  </div>
+				</div>  
+		        </section>
+			  </div>  
+		</div>   -
+		   	 
+  	</div>
+    
+</div>
+<hr/>
+</div>
+</div>-->

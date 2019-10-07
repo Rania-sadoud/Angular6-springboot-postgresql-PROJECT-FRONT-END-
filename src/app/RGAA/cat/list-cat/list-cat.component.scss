@@ -1,0 +1,21 @@
+header {
+  width: 100%;
+  height: 200px;
+  background: url('/assets/images/RGAA/rgaanew.png') center center no-repeat;
+  background-size: cover;
+  
+}
+
+
+.right {
+  float: right
+}
+
+
+
+.close
+{
+  z-index:10;
+  margin-left:-3rem;
+  margin-right:1rem;
+}

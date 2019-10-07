@@ -1,0 +1,256 @@
+  <ol class="breadcrumb" style="margin-bottom: 0px;">
+    <li class="breadcrumb-item"><a href="/RGAA/présentation">Acceuil</a></li>
+    <li class="breadcrumb-item active" href="/RGAA/catégories"><a >RGAA</a></li>
+  </ol>
+  <div  style="background-color: #f2f8f9;">  
+<div class="row">
+
+  <div class="col-12 grid-margin">
+  
+   
+    <!-- ******************************************************************** -->
+    <!--              The header                 -->
+    <!-- ******************************************************************** -->
+      
+         <header >
+      <h1 style="font-weight: bold;letter-spacing: 2px; font-size: 20px; color:black; padding-top:30px; padding-left:22px; color: #20481e;">
+        <span style="color:white"></span>Ressources génétique d'alimentation et d'agricultures</h1>
+    </header>
+    <br>
+   
+  <div class="card-body" >
+    <div>
+  
+      <a style="font-weight: bold;font-size: 14px;color: green;">{{objetcat.cat_nom}}   </a>
+         
+   <!--**********************************************************************-->
+    <!--**********************************************************************-->
+    <!--**********************************************************************-->
+    
+   <!-- <div *ngIf="validateur" >
+        <button (click)="open(content)" class="btn btn-success" style="background-color: transparent; color: blue; border-color: #f2f8f9;"><i class="fa fa-pencil" ></i>  Modifier</button>
+   
+       <button (click)="open(content11)" class="btn btn-success" style="background-color: transparent; color: red; border-color: #f2f8f9;"><i class="fa fa-trash-o"></i>Supprimer</button>
+    </div>
+     <!--**********************************************************************-->
+    <!--**********************************************************************-->
+    <!--**********************************************************************-->
+   
+<!-- <div class="right">
+
+<div class="input-group" >
+            <input type="search" placeholder="Rechercher..." aria-describedby="button-addon5" class="form-control" [(ngModel)]="word">
+            <div class="input-group-append">
+              <button id="button-addon5" type="submit" class="btn btn-success" routerLink="/recherche/{{word}}">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+  </div>
+  
+</div>-->
+   <ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">MAJ de la catégorie</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  
+  </div>
+  <div class="modal-body">
+  <!-- //////////////////////////////////////////////////////// -->
+      <div  style="width: 400px;">
+        <form (ngSubmit)="onSubmitcat()">
+          <!--==================== le nom ========================-->
+              <div class="form-group row">
+                <label for="nomcat" class="col-sm-3 col-form-label">Nom</label>
+                <div class="col-sm-9">
+                   <input _ngcontent-c5="" class="form-control" type="text" class="form-control" id="cat_nom" placeholder="Entrer le nom de la catégorie ..." required [(ngModel)]="objetcat.cat_nom" name="cat_nom">
+              </div>
+              </div>
+              <!--================== le prénom =========================-->
+              <div class="form-group row">
+                <label for="desccat" class="col-sm-3 col-form-label">Description</label>
+                <div class="col-sm-9">
+                  <!--  <input type="text" class="form-control" id="desc_cat" placeholder="Entrer le nom de la catégorie ..." required [(ngModel)]="cat.desc_cat" name="desc_cat">-->
+                
+                   <textarea class="form-control" rows="5" id="cat_desc" placeholder="Entrer le nom de la catégorie ..." required [(ngModel)]="objetcat.cat_desc" name="cat_desc"></textarea>   
+                   </div>
+              </div>
+              <!--================== le form =======================-->
+              <div class="form-group row">
+                <label for="desccat" class="col-sm-3 col-form-label">Image </label>
+                <div class="col-sm-9">
+                <label class="btn btn-default">
+                 
+                  <input type="file" id="lien" name="lien" required [(ngModel)]="objetcat.lien" (change)="fileventcat($event)">
+                </label>  
+                </div>
+              </div>
+
+            <!--============================================================================-->
+           
+         <!-- /////////////////////////////////////////////////// -->
+         <!--<ng-template #content1 let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title" >Catégorie crée avec succès</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        
+        </div>
+      
+         <div class="modal-footer">              
+          <button class="btn btn-success" (click)="CloseBoth(content1, content)">ok</button>
+        </div>
+        </ng-template>
+        <!-- ////////////////////////////////////////////////////// -->
+              <div class="modal-footer">              
+          <button type="submit" class="btn btn-success" >Mettre à jour</button>
+          <button class="btn btn-light" (click)="modal.close('Save click')">Annuler</button>
+        </div>
+  </form>
+  
+  <!-- =============================================================================================== -->
+  <!-- =============================================================================================== -->
+
+</div>
+
+<!--  <div [hidden]="!submitted">
+  <h4>Catégorie crée avec succés!</h4>
+  <div class="modal-footer">
+
+  <!-- - <button class="btn btn-success" (click)="newCat()">Créer encore une ?</button>
+  <button class="btn btn-success" (click)="newCat()">Créer encore une ?</button>
+  <button class="btn btn-light" (click)="modal.close('Save click')">Annuler</button>
+  </div>
+</div>-->
+  </div>
+   
+</ng-template>
+ <ng-template #content11 let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title" >Voulez-vous vraiment supprimer cette catégories  ? attention toute ses ressources seront supprimées ! </h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+
+            <span aria-hidden="true">&times;</span>
+          </button>
+        
+        </div>
+      
+         <div class="modal-footer">              
+          <button class="btn btn-success" (click)="deletecat()">oui
+          </button>
+          <button type="button" class="btn btn-danger" aria-label="Close" (click)="modal.dismiss('Cross click')">non</button>
+        </div>
+        </ng-template> 
+      <br><br>
+      <p style="font-size: 14px;">{{objetcat.cat_desc}}</p>
+   
+    </div>
+   </div>
+    <!--**********************************************************************-->
+    <!--**********************************************************************-->
+    <!--**********************************************************************-->
+   
+    <!--<div *ngIf="validateur">
+   <button  routerLink="/RGAA/Ajouter/{{rgaa_catid_list}}"  class="btn social-btn btn-success btn-rounded" type="button"><i class="mdi mdi-plus" ></i></button>
+
+   </div>-->
+    <!--**********************************************************************-->
+    <!--**********************************************************************-->
+    <!--**********************************************************************-->
+   
+   <!--*************************************************************-->
+<!--
+  <h3 style="text-align: center; align-items: center; font-size: 14px;"><a  routerLink="/RGAA/Ajouter/{{rgaa_catid_list}}" ><i class="mdi mdi-plus" ></i>créer une nouvelle ressource génétique</a></h3>
+
+-->
+
+  <h3 style="text-align: center; align-items: center; font-size: 14px;"><a  routerLink="/RGAA/Ajouter/{{rgaa_catid_list}}" ><i class="mdi mdi-plus" ></i>créer une nouvelle ressource génétique</a></h3>
+ <!--*************************************************************-->
+   
+   
+  <!-- ******************************************************************** -->
+    <!--        MODAL OF ADD CATEGORIE               -->
+    <!-- ******************************************************************** -->
+   
+   <ng-template #contentrgaa let-modal class="ngtemp">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Créer une nouvelle catégorie</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  
+  </div>
+  <div class="modal-body">
+  <!-- //////////////////////////////////////////////////////// -->
+      <div  style="width: 400px;">
+        <form (ngSubmit)="onSubmit(contentrgaa1, contentrgaa)">
+          <!--==================== le nom ========================-->
+              <div class="form-group row">
+                <label for="rgaa_nom" class="col-sm-3 col-form-label">Nom</label>
+                <div class="col-sm-9">
+                   <input _ngcontentrgaa-c5="" class="form-control" type="text" class="form-control" id="rgaa_nom" placeholder="Entrer le nom de la catégorie ..." required [(ngModel)]="rgaa.rgaa_nom" name="rgaa_nom">
+              </div>
+              </div>
+              <!--================== le prénom =========================-->
+              <div class="form-group row">
+                <label for="rgaa_desc" class="col-sm-3 col-form-label">Description</label>
+                <div class="col-sm-9">
+                  <!--  <input type="text" class="form-control" id="desc_cat" placeholder="Entrer le nom de la catégorie ..." required [(ngModel)]="cat.desc_cat" name="desc_cat">-->
+                
+                   <textarea class="form-control" rows="8" id="rgaa_desc" placeholder="Entrer le nom de la catégorie ..." required [(ngModel)]="rgaa.rgaa_desc" name="rgaa_desc"></textarea>   
+                   </div>
+              </div>
+              <!--================== le form =======================-->
+              <div class="form-group row">
+                <label  class="col-sm-3 col-form-label">Image </label>
+                <div class="col-sm-9">
+                <label class="btn btn-default">
+                 
+                  <input type="file" id="lien_rgaa" name="rgaa_lien" required [(ngModel)]="rgaa.rgaa_lien" (change)="filevent($event)">
+                </label>  
+                </div>
+              </div>
+
+            <!--============================================================================-->
+           
+         <!-- /////////////////////////////////////////////////// -->
+         <ng-template #contentrgaa1 let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title" >Catégorie crée avec succès</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        
+        </div>
+      
+         <div class="modal-footer">              
+          <button class="btn btn-success" (click)="CloseBoth(contentrgaa1, contentrgaa)">ok</button>
+        </div>
+        </ng-template>
+              <div class="modal-footer">              
+          <button type="submit" class="btn btn-success" >Créer</button>
+          <button class="btn btn-light" (click)="modal.close('Save click')">Annuler</button>
+        </div>
+  </form>
+  
+  <!-- =============================================================================================== -->
+  <!-- =============================================================================================== -->
+
+</div>
+
+
+  </div>
+   
+</ng-template>
+<div class="card-body" >
+  <app-small-list-rgaacat [rgaa_catid_child] = 'rgaa_catid_list'></app-small-list-rgaacat>
+  
+</div>
+
+  </div> <!-- end of grid -->
+</div><!-- end of row -->
+
+
+</div>

@@ -1,0 +1,23 @@
+
+<!--  
+<div class="card-deck">  
+<div *ngFor="let cat of cats | async" style="width: 200px;">
+  <app-details-cat [cat]='cat'></app-details-cat>
+</div>
+
+<div>
+  <button type="button" class="button btn-danger">Delete All</button>
+</div>
+</div>-->
+    <div class="card-deck">
+    
+        <div  *ngFor="let cat of cats | async" style="width: 250px; padding-left:20px; padding-top:8px;">
+            <div class="card-block" >
+                <app-details-cat [cat]='cat'></app-details-cat>
+                
+            </div>
+           
+        </div>
+
+       
+    </div>

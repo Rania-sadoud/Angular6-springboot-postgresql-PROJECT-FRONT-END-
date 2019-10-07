@@ -1,0 +1,334 @@
+    <ol class="breadcrumb" style="margin-bottom: 0px;">
+    <li class="breadcrumb-item"><a href="/RGAA/présentation">Acceuil</a></li>
+    <li class="breadcrumb-item active" href="/RGAA/catégories"><a >RGAA</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Ajouter une nouvelle ressource</li>
+  </ol>
+<div  style="background-color: #f2f8f9;"> 
+<div class="row" >
+
+  <div class="col-12 grid-margin" style="background-color: #f2f8f9;">
+  
+    <div class="card">
+    <!-- ******************************************************************** -->
+    <!--              breadcrumbs                -->
+    <!-- ******************************************************************** -->
+  
+    <!-- ******************************************************************** -->
+    <!--              The header                 -->
+    <!-- ******************************************************************** -->
+      
+       
+         <header >
+      <h1 style="font-weight: bold;letter-spacing: 2px; font-size: 20px; color:black; padding-top:30px; padding-left:22px; color: #20481e;">
+        <span style="color:white"></span>Ressources génétique d'alimentation et d'agricultures</h1>
+    </header>
+  
+     <div class="col-12 grid-margin" style="background-color: #f2f8f9;">
+    
+      <div class="card-body" style="background-color: #f2f8f9;">
+        <h1 style="font-size: 16px; font-weight: bold; color:  #575757; text-align: center;">
+          Modifier la ressouce génétique {{rgaa_objectmodif.nom}} </h1>
+          <br/>
+          <br/>
+        <form (ngSubmit)="onSubmit(content1)">
+         <h1 style="font-size: 12px;  border-bottom: 1px solid green; color: green;">
+          Information Générales</h1>
+          <br/>
+         
+          <div class="row" style="background-color: #f2f8f9;">
+            <div class="col-md-4 mb-3">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Nom Français</label>
+                <div class="col-sm-9">
+                      <input  class="form-control" type="text" class="form-control" 
+                      id="nom" placeholder="nom ..." 
+                      required [(ngModel)]="rgaa_objectmodif.nom" name="nom" placeholder="Nom en français ..." >
+                </div>
+              </div>
+            </div> 
+            <div class="col-md-4 mb-3">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Nom Arabe</label>
+                <div class="col-sm-9">
+                  <input class="form-control" type="text" class="form-control" 
+                      id="nomar"   required [(ngModel)]="rgaa_objectmodif.nomar" name="nomar"   placeholder="Nom arabe ..." />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Nom Anglais</label>
+                <div class="col-sm-9">
+                 <input class="form-control" type="text" class="form-control" 
+                      id="nomang"   required [(ngModel)]="rgaa_objectmodif.nomang" name="rgaa_nomang"  
+                 placeholder="Nom en anglais ..."/>
+                </div>
+              </div>
+            </div>
+          </div>
+            <div class="row">
+           <div class="col-sm-2"> <label class="col-form-label" style="font-size: 12px;">Description</label></div>
+        <div class="col-sm-10">  <textarea class="form-control" rows="4" id="description" 
+                  placeholder="description de la rgaa ..." required [(ngModel)]="rgaa_objectmodif.description" name="description"></textarea>   
+           </div>
+           <br/>
+           </div>
+           
+           
+           <br/>
+           <div class="row">
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Disposition</label>
+                <div class="col-sm-9">
+                   <textarea class="form-control" rows="3" id="dispo" placeholder="lieu  ..." 
+                      required [(ngModel)]="rgaa_objectmodif.dispo" name="dispo"></textarea>   
+                
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Image</label>
+                <div class="col-sm-9">
+                  <input type="file" id="lien" name="lien" style="font-size: 12px;" required [(ngModel)]="rgaa_objectmodif.lien"
+                   (change)="filevent($event)"></div>
+             
+                </div>
+              </div>
+            </div>
+            <br/>
+         
+          <div class="row">
+             <div class="col-md-4 mb-3">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Règne</label>
+                <div class="col-sm-9">
+                      <input  class="form-control" type="text" class="form-control" 
+                      id="regne" 
+                      required [(ngModel)]="rgaa_objectmodif.regne" name="regne" placeholder="Règne ..." >
+                </div>
+              </div>
+            </div><div class="col-md-4 mb-3">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Sous-règne</label>
+                <div class="col-sm-9">
+                      <input  class="form-control" type="text" class="form-control" 
+                      id="sousregne" 
+                      required [(ngModel)]="rgaa_objectmodif.sousregne" name="sousregne" placeholder=" Sous règne..." >
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Division</label>
+                <div class="col-sm-9">
+                      <input  class="form-control" type="text" class="form-control" 
+                      id="division"  
+                      required [(ngModel)]="rgaa_objectmodif.division" name="division" placeholder="Division..." >
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          <div class="row">
+             <div class="col-md-4 mb-3">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Classe</label>
+                <div class="col-sm-9">
+                      <input  class="form-control" type="text" class="form-control" 
+                      id="classe"  
+                      required [(ngModel)]="rgaa_objectmodif.classe" name="classe" placeholder="Classe ..." >
+                </div>
+              </div>
+            </div><div class="col-md-4 mb-3">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Sous-classe</label>
+                <div class="col-sm-9">
+                      <input  class="form-control" type="text" class="form-control" 
+                      id="sousclasse"  
+                      required [(ngModel)]="rgaa_objectmodif.sousclasse" name="sousclasse" placeholder="Sous classe ..." >
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Ordre</label>
+                <div class="col-sm-9">
+                      <input  class="form-control" type="text" class="form-control" 
+                      id="ordre"  
+                      required [(ngModel)]="rgaa_objectmodif.ordre" name="ordre" placeholder="Ordre ..." >
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          <div class="row">
+             <div class="col-md-4 mb-3">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Famille</label>
+                <div class="col-sm-9">
+                      <input  class="form-control" type="text" class="form-control" 
+                      id="famille"  
+                      required [(ngModel)]="rgaa_objectmodif.famille" name="famille" placeholder="Famille ..." >
+                </div>
+              </div>
+            </div><div class="col-md-4 mb-3">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Genre</label>
+                <div class="col-sm-9">
+                      <input  class="form-control" type="text" class="form-control" 
+                      id="genre"  
+                      required [(ngModel)]="rgaa_objectmodif.genre" name="genre" placeholder="Genre ..." >
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Nom binomial</label>
+                <div class="col-sm-9">
+                      <input  class="form-control" type="text" class="form-control" 
+                      id="binname"  
+                      required [(ngModel)]="rgaa_objectmodif.binname" name="binname" placeholder="Nom binomial ..." >
+                </div>
+              </div>
+            </div>
+            
+          </div>
+           <h1 style="font-size: 12px;  border-bottom: 1px solid green; color: green;">
+          Classification phylogénétique</h1>
+          <br/>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Ordre</label>
+                <div class="col-sm-9">
+                   <input  class="form-control" type="text" class="form-control" 
+                      id="ordre"  
+                      required [(ngModel)]="rgaa_objectmodif.ordrephy" name="ordrephy" placeholder="Ordre phylogénétique..." >
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Famille</label>
+                <div class="col-sm-9">
+                  <input  class="form-control" type="text" class="form-control" 
+                      id="famillephy"  
+                      required [(ngModel)]="rgaa_objectmodif.famillephy" name="famillephy" placeholder="famille phylogénétique ..." >
+                </div>
+              </div>
+            </div>
+          </div>
+             
+          
+          <div class="row">
+          <div class="col-md-6">
+            <h1 style="font-size: 12px;  border-bottom: 1px solid green; color: green;">
+          Produit principal</h1>
+          <br/>
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Nom du Produit</label>
+                <div class="col-sm-9">
+                  <input  class="form-control" type="text" class="form-control" 
+                      id="prodname"  
+                      required [(ngModel)]="rgaa_objectmodif.prodname" name="prodname" placeholder="Nom du produit ..." >
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+            <h1 style="font-size: 12px;  border-bottom: 1px solid green; color: green;">
+          Utilisation principale</h1>
+          
+          <br/>
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Utilisation</label>
+                <div class="col-sm-9">
+                   <input  class="form-control" type="text" class="form-control" 
+                      id="usetitle"  
+                      required [(ngModel)]="rgaa_objectmodif.usetitle" name="usetitle" placeholder="Nom de l'utilisation ..." >
+                </div>
+              </div>
+            </div>
+            
+          </div>
+                <div class="row">
+            
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Description du Produit</label>
+                <div class="col-sm-9">
+                   <textarea class="form-control" rows="5" id="proddesc" placeholder="description du produit  ..." 
+                      required [(ngModel)]="rgaa_objectmodif.proddesc" name="proddesc"></textarea> 
+                
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+          <br/>
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Description de l'utilisation</label>
+                <div class="col-sm-9">
+                   
+                   <textarea class="form-control" rows="5" id="usedesc" placeholder="description de l'utilisation  ..." 
+                      required [(ngModel)]="rgaa_objectmodif.usedesc" name="usedesc"></textarea> 
+                </div>
+              </div>
+            </div>
+          </div>
+             <div class="row">
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Image du produit</label>
+                <div class="col-sm-9">
+                   
+                 <input type="file" id="prodlien" name="prodlien"
+                  style="font-size: 12px;" required [(ngModel)]="rgaa_objectmodif.prodlien" (change)="filevent2($event)"></div>
+              </div>
+              </div>
+              <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label"></label>
+                <div class="col-sm-9">
+                   
+                  </div>
+                  </div>
+              </div>
+            </div>
+       
+            
+          <div class="right">
+       <button class="btn btn-light" >Annuler</button>
+         <button type="submit" class="btn btn-success" >Maj la ressource</button>
+         <ng-template #content1 let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title" >La ressource génétique a été mise à jour avec succés <br/>voulez-vous consulter la liste des RGAA ?</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        
+        </div>
+      
+         <div class="modal-footer">     
+         <button class="btn btn-light" (click)="modal.dismiss('Cross click')">Non</button>         
+          <button class="btn btn-success" (click)="RefreshPage()">Oui</button>
+          
+        </div>
+        </ng-template>
+       </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- ******************************************************************** -->
+    <!--        MODAL OF ADD CATEGORIE               -->
+    <!-- ******************************************************************** -->
+   
+
+
+
+  </div> <!-- end of grid -->
+</div><!-- end of row -->
+
+
+</div>

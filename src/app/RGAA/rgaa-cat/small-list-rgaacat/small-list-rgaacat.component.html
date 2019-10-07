@@ -1,0 +1,12 @@
+<div class="card-deck">
+    
+        <div  *ngFor="let rgaa of rgaas | async" style="width: 250px; padding-left:20px; padding-top:8px;">
+            <div class="card-block" >
+                <app-details-rgaacat [rgaa]='rgaa'></app-details-rgaacat>
+                
+            </div>
+           
+        </div>
+
+       
+    </div>

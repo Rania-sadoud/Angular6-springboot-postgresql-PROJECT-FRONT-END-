@@ -1,0 +1,42 @@
+<div *ngIf="rgaa">
+ <!--  <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="15px">
+  
+  <mat-card style="background-color: white;">
+  	<mat-card-content>  
+   	<img mat-card-image src="{{lien}}{{rgaa.lien}}" alt="x" style="height:150px;">
+			
+		<div class="container-fluid">
+		    <div>
+			  <section class="row">
+			    <a class="nav-link" routerLink="/RGAA/Informations/{{rgaa.rgaacatid}}/{{rgaa.id}}" routerLinkActive="active"  style="font-size:16px;
+			     color: black;" ><strong >{{rgaa.nom}}</strong> </a>
+			     <span class="spacer"></span>
+		        </section>
+			  </div>  
+		</div>   
+		   	 
+  	</mat-card-content>
+    
+</mat-card>-->
+<div class="row mt-5 " >
+<!-- Card -->
+<div class="card card-custom mx-2 mb-3 ">
+
+  <div class="view overlay">
+    <img class="card-img-top imgH" src="{{lien}}{{rgaa.lien}}" alt="Card image cap" style="height: 200px; width: 240px;">
+   
+  </div>
+
+  <!-- Card content -->
+  <div class="card-body" style="background-color: white;">
+
+    <!-- Title -->
+      <a class="nav-link" routerLink="/RGAA/Informations/{{rgaa.rgaacatid}}/{{rgaa.id}}" routerLinkActive="active"  style="font-size:16px;
+			     color: black;" ><strong >{{rgaa.nom}}</strong> </a>	     
+    
+  </div>
+
+</div>
+</div>
+<hr/>
+</div>

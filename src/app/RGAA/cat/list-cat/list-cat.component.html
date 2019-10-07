@@ -1,0 +1,130 @@
+<div  style="background-color: #f2f8f9;">  
+<div class="row">
+
+  <div class="col-12 grid-margin">
+  
+    
+    <!-- ******************************************************************** -->
+    <!--              breadcrumbs                -->
+    <!-- ******************************************************************** -->
+        <ol class="breadcrumb" style="margin-bottom: 0px;">
+    <li class="breadcrumb-item"><a routerLink="/RGAA/présentation">Acceuil</a></li>
+    <li class="breadcrumb-item active" routerLink="/RGAA/catégories"><a >RGAA</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Liste de catégories</li>
+  </ol>
+    <!-- ******************************************************************** -->
+    <!--              The header                 -->
+    <!-- ******************************************************************** -->
+      
+         <header >
+      <h1 style="font-weight: bold;letter-spacing: 2px; font-size: 20px; color:black; padding-top:30px; padding-left:22px; color: #20481e;">
+        <span style="color:white"></span>Ressources génétique d'alimentation et d'agricultures</h1>
+    </header>
+  <!-- ******************************************************************** -->
+    <!--        le boutton add et le search              -->
+    <!-- ******************************************************************** -->
+   
+   <div class="card-body" style="background-color:  #f2f8f9">
+
+   
+      <button (click)="open(content)" class="btn social-btn btn-success btn-rounded" type="button"><i class="mdi mdi-plus" ></i>
+      </button>
+   
+   <!--*************************************************************-->
+   <!--<button (click)="open(content)" class= "btn btn-success" type="button"><i class="mdi mdi-plus" ></i></button> 
+   <!--*************************************************************-->
+   
+
+
+
+   </div>
+  <!-- ******************************************************************** -->
+    <!--        MODAL OF ADD CATEGORIE               -->
+    <!-- ******************************************************************** -->
+   
+   <ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Créer une nouvelle catégorie</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  
+  </div>
+  <div class="modal-body">
+  <!-- //////////////////////////////////////////////////////// -->
+      <div  style="width: 400px;">
+        <form (ngSubmit)="onSubmit(content1, content)">
+          <!--==================== le nom ========================-->
+              <div class="form-group row">
+                <label for="nomcat" class="col-sm-3 col-form-label">Nom</label>
+                <div class="col-sm-9">
+                   <input _ngcontent-c5="" class="form-control" type="text" class="form-control" id="cat_nom" placeholder="Entrer le nom de la catégorie ..." required [(ngModel)]="cat.cat_nom" name="cat_nom">
+              </div>
+              </div>
+              <!--================== le prénom =========================-->
+              <div class="form-group row">
+                <label for="desccat" class="col-sm-3 col-form-label">Description</label>
+                <div class="col-sm-9">
+                  <!--  <input type="text" class="form-control" id="desc_cat" placeholder="Entrer le nom de la catégorie ..." required [(ngModel)]="cat.desc_cat" name="desc_cat">-->
+                
+                   <textarea class="form-control" rows="5" id="cat_desc" placeholder="Entrer le nom de la catégorie ..." required [(ngModel)]="cat.cat_desc" name="cat_desc"></textarea>   
+                   </div>
+              </div>
+              <!--================== le form =======================-->
+              <div class="form-group row">
+                <label for="desccat" class="col-sm-3 col-form-label">Image </label>
+                <div class="col-sm-9">
+                <label class="btn btn-default">
+                 
+                  <input type="file" id="lien" name="lien" required [(ngModel)]="cat.lien" (change)="filevent($event)">
+                </label>  
+                </div>
+              </div>
+
+            <!--============================================================================-->
+           
+         <!-- /////////////////////////////////////////////////// -->
+         <ng-template #content1 let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title" >Catégorie crée avec succès</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        
+        </div>
+      
+         <div class="modal-footer">              
+          <button class="btn btn-success" (click)="CloseBoth(content1, content)">ok</button>
+        </div>
+        </ng-template>
+        <!-- ////////////////////////////////////////////////////// -->
+              <div class="modal-footer">              
+          <button type="submit" class="btn btn-success" >Créer</button>
+          <button class="btn btn-light" (click)="modal.close('Save click')">Annuler</button>
+        </div>
+  </form>
+  
+  <!-- =============================================================================================== -->
+  <!-- =============================================================================================== -->
+
+</div>
+
+<!--  <div [hidden]="!submitted">
+  <h4>Catégorie crée avec succés!</h4>
+  <div class="modal-footer">
+
+  <!-- - <button class="btn btn-success" (click)="newCat()">Créer encore une ?</button>
+  <button class="btn btn-success" (click)="newCat()">Créer encore une ?</button>
+  <button class="btn btn-light" (click)="modal.close('Save click')">Annuler</button>
+  </div>
+</div>-->
+  </div>
+   
+</ng-template>
+  <app-small-list></app-small-list>
+  
+
+
+  </div> <!-- end of grid -->
+</div><!-- end of row -->
+</div>
